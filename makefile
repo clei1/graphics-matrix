@@ -3,6 +3,9 @@ CFLAGS= -Wall
 LDFLAGS= -lm
 CC= gcc
 
+run: all
+	./main
+
 all: $(OBJECTS)
 	$(CC) -o main $(OBJECTS) $(LDFLAGS)
 
@@ -18,7 +21,5 @@ dsiplay.o: display.c display.h ml6.h matrix.h
 matrix.o: matrix.c matrix.h
 	$(CC) $(CFLAGS) -c matrix.c
 
-run: main
-	./main
 clean:
 	rm *.o *~
